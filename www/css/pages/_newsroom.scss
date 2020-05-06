@@ -1,0 +1,34 @@
+.newsroom {
+  ul {
+      list-style: none; 
+  }
+
+  #accordion {
+
+    #latest,
+    #press,
+    #calendar {
+      display: none;
+      overflow: hidden;
+    }
+
+    #chk-latest:checked ~ label[for=chk-latest],
+    #chk-press:checked ~ label[for=chk-press],
+    #chk-calendar:checked ~ label[for=chk-calendar] {
+        color: get-color('gray');
+      }
+
+    #chk-latest:checked ~ #latest,
+    #chk-press:checked ~ #press,
+    #chk-calendar:checked ~ #calendar {
+        display: block;
+      }
+
+    label[for=chk-latest],
+    label[for=chk-press],
+    label[for=chk-calendar] {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}

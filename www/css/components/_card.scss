@@ -1,0 +1,49 @@
+.card {
+    color: get-color('white');
+    background-color: get-color('blue');
+    border-radius: 2px;
+    line-height: 1.6;
+    font-family: $font-family-alt;
+    font-size: $font-size-base;
+    padding: 18px;
+    
+
+    a, h3 {
+        font-family: $font-family-alt;
+        color: get-color('white');
+    }
+
+    a:hover {
+        color: white;
+        text-decoration: underline;
+        i {
+            color: get-color('yellow');
+        }
+        
+        
+    }
+
+    img {
+        width: 100%;
+    }
+    
+    
+
+    // sm, md, lg, xl
+    @include create-breakpoint('sm') {
+        
+    }
+
+    @include create-breakpoint('md') {
+        
+    }
+
+    @include create-breakpoint('lg') {
+       
+    }
+    
+}
+
+
+
+

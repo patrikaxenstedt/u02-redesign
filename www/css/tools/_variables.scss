@@ -1,0 +1,100 @@
+// IMPORTANT!
+// Be careful when changing these values as they will
+// drastically alter the look of the entire project 
+
+// Theme
+//
+
+/// Colors
+/// @type Map
+$colors: (
+    'blue': #181d26,
+    'cyan': #17a2b8,
+    'green': #81c465,
+    'yellow':#fff100,
+    'red': #ff6974,
+    'white': #ffffff,
+    'gray': #6c757d,
+    'gray-light': #c6c6c7,
+    'gray-dark': #343a40,
+    'black': #000000,
+    'offwhite': #f8f9fa
+);
+
+/// Theme colors
+/// @require {$colors}
+/// @type Map
+$theme-colors: (
+    'primary': map-get($colors, 'blue'),
+    'secondary': map-get($colors, 'gray'),
+    'success': map-get($colors, 'green'),
+    'info': map-get($colors, 'cyan'),
+    'warning': map-get($colors, 'yellow'),
+    'danger': map-get($colors, 'red'),
+    'light': map-get($colors, 'gray-light'),
+    'dark': map-get($colors, 'gray-dark'),
+    'muted': map-get($colors, 'gray')
+);
+
+// Merge the previous two maps together to form a map containing all of the items
+$theme-colors-all: map-merge($theme-colors, $colors);
+
+// Learn more about maps, map-get and map-merge: https://sass-lang.com/documentation/values/maps
+
+/// Font family
+/// @type List - All of the fonts that the browser should attempt to use (in order)
+$font-family: 'Nunito', sans-serif;
+
+/// Alternative font family (used primarily for h1-h6)
+/// @type List
+$font-family-alt: 'Montserrat', sans-serif;
+
+/// Font size baseline value
+/// @type Number
+$font-size-base: 16px; // Placeholder value
+
+// Navigation
+//
+
+/// Navigation bar max height
+/// @type Number
+$navbar-height: 64px; // Placeholder value
+
+// Grid
+// Everything related to the twelve column grid
+//
+
+/// Breakpoint sizes for responsive media queries
+/// @see {mixin} responsive
+/// @type Map
+$grid-breakpoints: (
+    'xs': 0,
+    'sm': 576px, // Landscape phone
+    'md': 768px, // Tablet
+    'lg': 992px, // Laptop / Landscape tablet
+    'xl': 1200px // Desktop
+);
+
+/// Grid gutter spacing (space between columns, rows and containers)
+/// Basically instead of a narrow grid such as ■■■ it instead becomes ■ ■ ■
+/// @type Number
+$grid-gutter: 16px; // Placeholder value
+// Rows are wrappers for columns. Each column has horizontal padding (called a gutter) for controlling the space between them. 
+// This padding is then counteracted on the rows with negative margins. 
+// This way, all the content in your columns is visually aligned down the left side.
+// source: https://getbootstrap.com/docs/4.0/layout/grid/#how-it-works
+
+/// Grid columns
+/// @type Number - Max amount of horizontal columns in the grid
+$grid-columns: 12;
+
+// Parallax
+//
+
+/// Parallax perspective
+/// @type Number
+$parallax-perspective: 1px;
+
+/// Parallax distance
+/// @type Number
+$parallax-translate-z: -1px;

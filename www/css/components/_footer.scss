@@ -1,0 +1,70 @@
+.footer {
+    background-color: get-color('blue');
+    color: get-color('white');
+    font-family: $font-family;
+
+    i {
+        color: get-color('info');
+    }
+
+    a {
+        text-decoration: none;
+        color: get-color('white');
+
+        &:hover {
+            color: get-color('yellow');
+            fill: get-color('yellow');
+        }
+    }
+
+    h2 {
+        font-weight: 300;
+        font-size: 16px;
+
+        @include create-breakpoint('xl') {
+            font-size: 18px;
+        }
+    }
+
+    h3 {
+        display: flex;
+        align-items: flex-end;
+        font-weight: 500;
+    }
+
+    h3,
+    p {
+        font-size: 12px;
+
+        @include create-breakpoint('xl') {
+            font-size: 14px;
+        }
+    }
+
+    p {
+        color: get-color('gray-light');
+    }
+
+    &__icon {
+        width: 32px;
+        height: auto;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 48px 24px;
+
+        @include create-breakpoint('sm') {
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__bottom {
+        background-color: get-color('black');
+        flex-flow: row wrap;
+        text-align: center;
+        padding: 24px;
+    }
+}

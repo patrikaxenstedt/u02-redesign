@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="sv" class="parallax">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Myndigheten för yrkeshögskolan, utbildningar, yrkeshögskolan" />
+        <meta
+            name="description"
+            content="Myndigheten för yrkeshögskolan bidrar till att försörja arbetslivet med rätt kompetens i rätt tid. Vårt huvuduppdrag är att ansvara för frågor som rör yrkeshögskolan i Sverige. Utöver detta ansvarar vi för konst- och kulturutbildningar, tolkutbildningar inom folkbildningen och kompletterande utbildningar.
+    Vi är också ansvariga för att samordna en nationell struktur för validering av utbildning och yrkeskompetens, och är nationell samlingspunkt för EQF (European Qualifications Framework).
+    "
+        />
+        <link href="media/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet" />
+        <link href="./css/main.css" type="text/css" rel="stylesheet" />
+        <title>Myndigheten för yrkeshögskolan</title>
+    </head>
+    <body>
+        <header role="banner" class="header">
+            <input type="checkbox" id="chk-cookie" class="vhidden" />
+            <div role="alert" id="cookies" class="alert">
+                <div class="container row">
+                    <div class="alert__content col-auto offset-lg-1 offset-xl-2">
+                        <h2 class="h4 font-weight-medium mb-1 mb-sm-0 ">Vi använder cookies</h2>
+                        <p>
+                            Genom att fortsätta använda myh.se godkänner du detta.
+                            <br />
+                            <a href="https://www.myh.se/Om-webbplatsen/Webbkakor-pa-den-har-webbplatsen/">
+                                Läs mer om cookies här
+                            </a>
+                        </p>
+                    </div>
+                    <div class="alert__buttons col-auto offset-lg-2 align-self-center mr-3">
+                        <label for="chk-cookie" class="btn btn--lg bg--info">Jag accepterar</label>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar__tools">
+                <h1 class="offset-5 col-2 d-none d-lg-block text-center">
+                    <a href="./">
+                        <img
+                            src="./media/logo.svg"
+                            class="navbar__logo navbar__logo--lg"
+                            alt="Myndigheten för yrkeshögskolan"
+                        />
+                    </a>
+                </h1>
+
+                <ul class="navbar__content col-5 d-flex">
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link d-none d-lg-inline" aria-label="Engelska">
+                            EN
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link d-none d-lg-inline">
+                            <i class="material-icons md-18" aria-hidden="true">flip_to_back</i>
+                            Lättläst
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link d-none d-lg-inline">
+                            <i class="material-icons md-18" aria-hidden="true">format_size</i>
+                            Anpassa
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav role="navigation" class="navbar">
+                <input type="checkbox" id="toggle" class="vhidden d-lg-none" />
+                <ul class="navbar__content align-items-center justify-content-between">
+                    <!-- Hamburger button -->
+                    <li class="navbar__button col-4 d-lg-none">
+                        <label for="toggle" class="navbar__toggle">
+                            <i class="material-icons" aria-hidden="true">menu</i>
+                            <i class="material-icons" aria-hidden="true">close</i>
+                        </label>
+                    </li>
+
+                    <!-- Logo -->
+                    <li class="navbar__logo col-auto d-lg-none p-0">
+                        <a href="./">
+                            <img
+                                src="./media/logo-mobile.svg"
+                                class="navbar__logo"
+                                alt="Myndigheten för yrkeshögskolan"
+                            />
+                        </a>
+                    </li>
+
+                    <!-- Links -->
+                    <li class="navbar__collapse">
+                        <ul>
+                            <li class="navbar__item navbar__item--selected">
+                                <a href="./" class="navbar__link">Start</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./om-oss" class="navbar__link">Om oss</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./verksamhetsomraden" class="navbar__link">Verksamhetsområden</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./lagar-regler-och-tillsyn" class="navbar__link">Lagar, regler, tillsyn</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./statistik" class="navbar__link">Statistik</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./publikationer" class="navbar__link">Publikationer</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./nyhetsrum" class="navbar__link">Nyhetsrum</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="./kontakt" class="navbar__link">Kontakt</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="navbar__actions col-4 col-lg-auto d-block text-right p-0">
+                        <form role="search" class="d-inline-block">
+                            <a role="button" href="#" class="navbar__button" aria-label="Sök">
+                                <i class="material-icons" aria-hidden="true">search</i>
+                            </a>
+                        </form>
+
+                        <a role="button" href="#" class="navbar__button" aria-label="Gå till mina sidor">
+                            <i class="material-icons md-36" aria-hidden="true">account_circle</i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main role="main" class="start">
+            <!-- Banner  -->
+            <div class="parallax__item container d-flex" id="parallax">
+                <div class="parallax__static my-auto">
+                    <div class="row bg--white">
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="./media/aside-banners/myh_anmalbrister.png"
+                                    alt="Anmäl brister i en utbildning"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="./media/aside-banners/myh_storpil_hittattbildningar.png"
+                                    alt="Länk till Hitta Utbildningar"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="media/aside-banners/vagledare-banner-svart.png"
+                                    alt="Länk till För dig som är vägledare"
+                                />
+                            </a>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="./media/aside-banners/myh_storpil_gdharordet.png"
+                                    alt="Länk till GD har ordet"
+                                />
+                            </a>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="media/aside-banners/epale_banner.png"
+                                    alt="Länk till EPALE: Digital mötesplats för vuxenutbildningar"
+                                />
+                            </a>
+                        </div>
+                        <div class="col-4 col-lg-2">
+                            <a href="#">
+                                <img
+                                    src="media/aside-banners/banner_ya-delegationen.png"
+                                    alt="Länk till YA-delegationens material"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row bg--white text--gray-dark mt-0">
+                        <div class="col-6 col-lg-4">
+                            <h4>Ansök om att bedriva utbildning</h4>
+                            <ul>
+                                <li><a href="#">Yrkeshögskoleutbildning</a></li>
+                                <li><a href="#">Konst- och kulturutbildning</a></li>
+                                <li><a href="#">Tolkutbildning</a></li>
+                                <li><a href="#">Utbildning med endast tillsyn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h4>För dig som bedriver utbildning</h4>
+                            <ul>
+                                <li><a href="#">Yrkeshögskoleutbildning</a></li>
+                                <li><a href="#">Konst- och kulturutbildning</a></li>
+                                <li><a href="#">Tolkutbildning</a></li>
+                                <li><a href="#">Utbildning med endast tillsyn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h4>För företag och organisationer</h4>
+                            <p>
+                                Arbetslivet är den främsta drivkraften bakom vilka yrkeshögskoleutbildningar som startar
+                                och hur de är upplagda.
+                            </p>
+                            <a href="#">
+                                <b>Läs om hur du kan engagera dig och påverka utbildningarna inom yrkes- högskolan!</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parallax__static bg--offwhite">
+                <div class="container">
+                    <div class="row">
+                        <!-- Sidebar - Hide sidebar below XL breakpoint -->
+                        <aside class="d-none d-xl-block col-xl-3 bg--primary order-last">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 mb-3 card">
+                                        <h3 class="h5">Verksamhetsområden</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Yrkeshögskolan
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Konst- och kulturutbildningar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Tolkutbildningar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Utbildningar med endast tillsyn
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    SeQF
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Validering
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Calendar -->
+                                    <section class="text--white mb-3">
+                                        <header class="container row justify-content-between align-items-center mb-1">
+                                            <h3 class="h5 text--white mb-0">Kalender</h3>
+                                            <p>
+                                                <a href="https://www.myh.se/WebCal.aspx" class="btn">
+                                                    <i class="material-icons md-18 mr-1">calendar_today</i>
+                                                    Webcal
+                                                </a>
+                                            </p>
+                                        </header>
+
+                                        <section role="region">
+                                            <div class="row">
+                                                <h3 class="col-12 h6 bg--cyan mb-0">November</h3>
+                                            </div>
+                                            <article role="article">
+                                                <div class="row mt-0">
+                                                    <h4 class="col-3 h2 text-center bg--gray-dark mb-0">13</h4>
+                                                    <p class="col font-weight-bold bg--white mb-0">
+                                                        <a
+                                                            href="https://www.myh.se/Nyhetsrum/Kalender/2019/Informationstraff-for-vagledare/"
+                                                        >
+                                                            Informationsträff för vägledare
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </article>
+                                            <article role="article">
+                                                <div class="row">
+                                                    <h4 class="col-3 h2 text-center bg--gray-dark mb-0">21</h4>
+                                                    <p class="col font-weight-bold bg--white mb-0">
+                                                        <a
+                                                            href="https://www.myh.se/Nyhetsrum/Kalender/2019/Workshop-i-att-skriva-SeQF-kvalifikationer7/"
+                                                        >
+                                                            Workshop i att skriva ansökan om inplacering i SeQF
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </article>
+                                        </section>
+
+                                        <section role="region">
+                                            <div class="row">
+                                                <h3 class="col-12 h6 bg--cyan mb-0">December</h3>
+                                            </div>
+                                            <article role="article">
+                                                <div class="row">
+                                                    <h4 class="col-3 h2 text-center bg--gray-dark mb-0">11</h4>
+                                                    <p class="col font-weight-bold bg--white mb-0">
+                                                        <a
+                                                            href="https://www.myh.se/Nyhetsrum/Kalender/2019/Workshop-i-att-skriva-SeQF-kvalifikationer8/"
+                                                        >
+                                                            Workshop i att skriva ansökan om inplacering i SeQF
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </article>
+                                        </section>
+
+                                        <div class="row mt-1">
+                                            <a href="#" class="col btn btn--lg btn--block">
+                                                Alla kalenderhändelser
+                                                <i class="material-icons mr-1" aria-hidden="true">
+                                                    keyboard_arrow_right
+                                                </i>
+                                            </a>
+                                        </div>
+                                    </section>
+
+                                    <div class="col-12 mb-3 card">
+                                        <h3 class="h5">Gå direkt till</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Lediga jobb
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Pågående upphandlingar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Pressmeddelanden
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Nyheter
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Nyhetsbrev
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 mb-3 card">
+                                        <h3 class="h5">Senaste publikationer</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Faktablad: inför kvalitetsgranskning av yrkeshögskoleutbildningar
+                                                    2020
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Faktablad: kvalitetskriterier för yrkeshögskolan 2020
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons mr-1" aria-hidden="true">
+                                                        keyboard_arrow_right
+                                                    </i>
+                                                    Resultat av tematisk kvalitetsgranskning av anordnares arbete med
+                                                    validering mot den sammanhållna grundutbildningen till kontakttolk
+                                                    2019
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <section class="col">
+                            <iframe
+                                src="https://www.youtube.com/embed/iSa-YkIR9is"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                title="Video: Grundläggande om yrkeshögskolan"
+                            ></iframe>
+
+                            <h2 class="mt-3">Aktuellt</h2>
+
+                            <article role="article" class="media">
+                                <div class="media__content">
+                                    <h5>
+                                        <a
+                                            href="https://www.myh.se/Nyhetsrum/Nyheter/2019/Ansok-om-statsbidrag-for-utbildning-till-teckensprakstolk-och-dovblindtolk-samt-skrivtolk/"
+                                        >
+                                            Ansök om statsbidrag för utbildning till teckenspråks- och dövblindtolk samt
+                                            skrivtolk
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        Nu kan folkhögskolor ansöka om statsbidrag för den fyraåriga teckenspråks- och
+                                        dövblindtolkutbildningen samt den ettåriga skrivtolkutbildningen&hellip;
+                                    </p>
+                                    <p class="text--gray mt-1">17 oktober 2019</p>
+                                </div>
+                                <img
+                                    src="https://www.myh.se/ServeImage.aspx?image=%2FGlobal%2FBildbank%2FScandinav%2FScandinav_royaltyfria%2FScandinav_XMQC.jpg&width=125&height=125&method=Crop"
+                                    class="media__image"
+                                    alt="Bild till artikel"
+                                />
+                            </article>
+
+                            <article role="article" class="media">
+                                <div class="media__content">
+                                    <h5>
+                                        <a
+                                            href="https://www.myh.se/Nyhetsrum/Nyheter/2019/Informationstraff-for-vagledare/"
+                                        >
+                                            Informationsträff för vägledare
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        Den 13 november anordnar myndigheten en träff för vägledare och välkomnar
+                                        deltagarna till en förmiddag med föreläsning och möjlighet till diskussion kring
+                                        olika frågor&hellip;
+                                    </p>
+                                    <p class="text--gray mt-1">15 oktober 2019</p>
+                                </div>
+                                <img
+                                    src="https://www.myh.se/ServeImage.aspx?image=%2FGlobal%2FBildbank%2FScandinav_9EMA.jpg&width=125&height=125&method=Crop"
+                                    class="media__image"
+                                    alt="Bild till artikel"
+                                />
+                            </article>
+
+                            <article role="article" class="media">
+                                <div class="media__content">
+                                    <h5>
+                                        <a
+                                            href="https://www.myh.se/Nyhetsrum/Nyheter/2019/Hon-jobbar-med-att-gora-YH-mer-kant-och-erkant-/"
+                                        >
+                                            Hon jobbar med att göra YH mer känt och erkänt
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        Maria Granberg är en tongivande YH-ambassadör. Idag arbetar hon på
+                                        Handelskammaren där hon leder satsningen Yrkeshögskola Mälardalen. Innan dess
+                                        var hon handläggare på Myndigheten för yrkeshögskolan och&hellip;
+                                    </p>
+                                    <p class="text--gray mt-1">1 oktober 2019</p>
+                                </div>
+                                <img
+                                    src="https://www.myh.se/ServeImage.aspx?image=%2FGlobal%2FBildbank%2Fmaria.jpg&width=125&height=125&method=Crop"
+                                    class="media__image"
+                                    alt="Bild till artikel"
+                                />
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer role="contentinfo" class="footer">
+            <div class="footer__container container">
+                <section role="region">
+                    <h2>Kontakt</h2>
+                    <h3>
+                        <i class="material-icons md-18 mr-1">phone</i>
+                        Telefon
+                    </h3>
+                    <p class="mb-1">
+                        Ring vår växel
+                        <a href="tel:010-2090100">010-209 01 00</a>
+                        <br />
+                        Växeln är öppen vardagar
+                        <span class="text--white">8.00 - 17.00</span>
+                    </p>
+                    <h3>
+                        <i class="material-icons md-18 mr-1">forum</i>
+                        Digitalt kundforum
+                    </h3>
+                    <p class="mb-1">
+                        Se vanliga frågor och svar eller ställ frågor:
+                        <br />
+                        <a href="https://forum.myh.se/org/myndigheten-for-yrkeshogskola/">forum.myh.se</a>
+                    </p>
+                    <h3>
+                        <i class="material-icons md-18 mr-1">email</i>
+                        E-post
+                    </h3>
+                    <p class="mb-1">
+                        Allmänna frågor/synpunkter:
+                        <a href="mailto:info@myh.se">info@myh.se</a>
+                        <br />
+                        Registrator:
+                        <a href="mailto:registrator@myh.se">registrator@myh.se</a>
+                    </p>
+                    <h3>
+                        <i class="material-icons md-18 mr-1">room</i>
+                        Adress
+                    </h3>
+                    <p class="mb-3 mb-md-0">
+                        Myndigheten för yrkeshögskolan
+                        <br />
+                        Box 145
+                        <br />
+                        721 05 Västerås
+                    </p>
+                </section>
+                <section role="region">
+                    <h2>Om webbplatsen</h2>
+                    <p class="mb-3">
+                        <a href="https://www.myh.se/Om-webbplatsen/Anvanda-webbplatsen/">Använda webbplatsen</a>
+                        <br />
+                        <a href="https://www.myh.se/Om-webbplatsen/Webbkakor-pa-den-har-webbplatsen/">
+                            Om webbkakor (cookies)
+                        </a>
+                        <br />
+                        <a href="https://www.myh.se/Webbkarta/">Webbkarta</a>
+                    </p>
+                    <h2>Våra övriga webbplatser</h2>
+                    <p>
+                        <a href="http://www.yrkeshogskolan.se" target="_blank">www.yrkeshogskolan.se</a>
+                        <br />
+                        <a href="http://www.konstkulturutbildning.se" target="_blank">www.konstkulturutbildning.se</a>
+                        <br />
+                        <a href="http://www.blitolk.nu" target="_blank">www.blitolk.nu</a>
+                        <br />
+                        <a href="http://www.seqf.se" target="_blank">www.seqf.se</a>
+                    </p>
+                </section>
+            </div>
+            <section role="region" class="footer__bottom">
+                <a href="https://www.youtube.com/channel/UC8iPn0eKy-5vQ6Mx_-ep-KA" target="_blank" aria-label="Youtube">
+                    <svg
+                        class="footer__icon mb-1"
+                        viewbox="0 0 234.66667 165.33333"
+                        height="165.33333"
+                        width="234.66667"
+                        version="1.1"
+                    >
+                        <g transform="matrix(1.3333333,0,0,-1.3333333,0,165.33333)" id="g10">
+                            <g transform="scale(0.1)" id="g12">
+                                <path
+                                    id="path14"
+                                    style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                                    d="m 700,358.313 v 523.375 l 460,-261.7 z m 1023.22,688.057 c -20.24,76.22 -79.88,136.24 -155.6,156.61 C 1430.37,1240 880,1240 880,1240 c 0,0 -550.367,0 -687.621,-37.02 C 116.656,1182.61 57.0156,1122.59 36.7773,1046.37 0,908.227 0,620 0,620 0,620 0,331.777 36.7773,193.629 57.0156,117.41 116.656,57.3906 192.379,37.0117 329.633,0 880,0 880,0 c 0,0 550.37,0 687.62,37.0117 75.72,20.3789 135.36,80.3983 155.6,156.6173 C 1760,331.777 1760,620 1760,620 c 0,0 0,288.227 -36.78,426.37"
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+
+                <h2 class="mb-0">Ansvarig utgivare</h2>
+                <p class="text--muted">Thomas Persson, generaldirektör MYH.</p>
+            </section>
+        </footer>
+    </body>
+</html>

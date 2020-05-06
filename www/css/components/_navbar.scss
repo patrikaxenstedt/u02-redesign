@@ -1,0 +1,259 @@
+.header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: get-color('primary');
+}
+
+.navbar {
+    $main: &;
+
+    font-family: $font-family;
+    height: $navbar-height;
+
+    flex-flow: row wrap;
+    max-width: 100%;
+    
+    color: get-color('white');
+    background-color: get-color('primary');
+    border-bottom: 4px solid get-color('gray');
+
+    // Mobile nav
+    &__collapse {
+        display: none;
+
+        @include create-breakpoint-up('lg') {
+            display: block;
+        }
+    }
+    
+    #toggle:checked ~ &__content &__toggle {
+        i {
+            transform: rotate(0deg);
+            opacity: 0;
+        }
+
+        i + i {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+    }
+
+    // a11y
+    #toggle:focus:not(:checked) ~ &__content &__button &__toggle {
+        outline-width: 1px;
+        outline-style: auto;
+    }
+    
+    // Pretend like you didn't see this breakpoint, 
+    // it's not like I couldn't figure out how to do this with the min-width approach
+    @include create-breakpoint($max: 'lg') {
+        #toggle:checked ~ &__content > &__collapse {
+            z-index: -1;
+
+            // order: 1;
+            overflow: hidden;
+            display: block !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 100%;
+            background: get-color('primary');
+            box-shadow: 0px 10px 10px 0px get-color('black', 0.5);
+
+            ul {
+                height: 100%;
+                flex-direction: column;
+            }
+
+            .navbar__item {
+                display: flex;
+                padding: 0;
+
+                &--selected {
+                    background: get-color('gray-dark');
+                    box-shadow: inset 4px -2px 10px 2px get-color('black', 0.2);
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .navbar__link {
+                width: 100%;
+                height: 100%;
+                padding: 16px 26px;
+
+                &:hover,
+                &:active {
+                    color: get-color('white');
+                    background: get-color('gray');
+                }
+
+                &:active {
+                    box-shadow: inset 4px 4px 16px 4px get-color('black', 0.35);
+                }
+            }
+        }
+    }
+
+    // Other stuff
+    &__content {
+        height: 100%;
+        padding: 0 16px;
+    }
+
+
+    &__logo {
+        height: 32px;
+        max-width: none;
+        user-select: none;
+
+        &--lg {
+            height: 48px;
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        color: get-color('white');
+        width: 24px;
+        height: 24px;
+        background: none;
+        border: none;
+
+        i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-180deg);
+            transition: .2s ease;
+        }
+
+        // Hide close button initially
+        i + i {
+            opacity: 0;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &--selected::after,
+        &::after {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            top: 2.65em;
+            left: 0;
+            transform: scale(0);
+            transform-origin: center;
+            background: get-color('gray-light');
+            transition: .35s ease;
+        }
+
+        &--selected::after,
+        &:hover::after {
+            transform: scale(1);
+        }
+
+        &--selected {
+            a {
+                color: get-color('yellow');
+            }
+
+            &::after {
+                background: get-color('gray-dark');
+            }
+        }
+    }
+    
+    &__link {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        color: get-color('white');
+        text-decoration: none;
+        padding: 14px 12px;
+
+        // Set link color on hover
+        &:hover {
+            color: get-color('yellow');
+        }
+
+        @include create-breakpoint-up('xl') {
+            font-size: 16px;
+            padding: 14px 16px;
+        }
+    }
+    
+    // Top right menu
+    &__tools {
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+        background-color: transparent;
+        border: none;
+        height: 0;
+
+        transition: height .2s ease;
+
+        @include create-breakpoint-up('lg') {
+            height: $navbar-height;
+        }
+
+        #{$main}__link {
+            font-size: 12px;
+            font-weight: 400;
+            color: get-color('white');
+
+            @include create-breakpoint-up('xl') {
+                font-size: 14px;
+            }
+        }
+
+        .material-icons {
+            vertical-align: initial;
+        }
+
+        #{$main}__content {
+            margin-top: 12px;
+            justify-content: flex-end;
+            align-self: flex-start;
+        }
+    }
+
+    &__icon {
+        color: get-color('white');
+    }
+
+    &__button {
+        user-select: none;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        vertical-align: middle;
+
+        &:hover .material-icons {
+            transition: .35s ease;
+            color: get-color('yellow');            
+        }
+    }
+}

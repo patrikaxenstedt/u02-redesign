@@ -1,0 +1,110 @@
+// Grid system - based on Bootstrap 4
+// See: https://getbootstrap.com/docs/4.3/layout/grid/
+// These classes slightly stray from the BEM approach since they are modular
+
+.container {
+    width: 100%;
+    
+    // Set padding equal to gutter size
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    
+    // Align content center
+    margin-right: auto;
+    margin-left: auto;
+
+    
+    // Loop through all breakpoint sizes
+    @each $threshold, $width in $grid-breakpoints {
+        // Create media query for each size with a width greater than 0 (max-width: 0 != sense)
+        @if ($width != 0) {
+            @include create-breakpoint-up($threshold) {
+                max-width: $width;
+            }
+        }
+    }
+    
+    // Fluid modifier - Full width container
+    &--fluid {
+        max-width: 100%;
+    }
+
+    &.row {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+
+    // Negative row margin prevents spacing issues, evens out
+    // column padding and allows for multi-column/row nesting
+    margin-right: -$grid-gutter;
+    margin-left: -$grid-gutter;
+
+    // Add some space if a row is followed by another row
+    & + .row {
+        margin-top: $grid-gutter;
+    }
+
+    // Column modifier
+    &--column {
+        flex-direction: column;
+    }
+}
+
+// Create a column placeholder selector
+// See: https://sass-lang.com/documentation/style-rules/placeholder-selectors
+%column {
+    position: relative;
+    width: 100%;
+    padding: $grid-gutter;
+}
+
+// Loop through all breakpoint sizes
+@each $threshold, $width in $grid-breakpoints {
+    $infix: if($width == 0, '', '-#{$threshold}');
+
+    .col#{$infix},
+    .col#{$infix}-auto {
+        // Extend the placeholder selector
+        @extend %column;
+    }
+
+    // Loop through grid column amount
+    @for $iteration from 1 through $grid-columns {
+        // 100% width columns before breakpoint sizes
+        .col#{$infix}-#{$iteration} {
+            @extend %column;
+        }
+    }
+
+    // Create a media query for each breakpoint size
+    @include create-breakpoint-up($threshold) {
+        // Create .col-sm, .col-md ...
+        .col#{$infix} {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+
+            // Create .col-auto class - automatically resizes to fit
+            &-auto {
+                flex-basis: auto;
+                max-width: 100%;
+                width: auto;
+            }
+        }
+
+        // Loop through the amount of grid columns
+        @for $iteration from 1 through $grid-columns {
+            // Create .col-1, .col-2 ... .col-sm-1, .col-sm-2 ... 
+            .col#{$infix}-#{$iteration} {
+                // 12 columns = 8.3333333333% * 2, * 3, * 4 and so on
+                flex-basis: (100% / $grid-columns) * $iteration;
+                max-width: (100% / $grid-columns) * $iteration;
+            }
+        }
+    }
+}

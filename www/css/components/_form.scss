@@ -1,0 +1,17 @@
+.form-control {
+  display: block;
+  width: 100%;
+  padding:5px; 
+  border: 2px solid get-color('gray-light');
+  border-radius: 5px;
+  line-height: 1.25;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+input:focus {
+  outline: 4px;
+  border-color: get-color('gray');
+}

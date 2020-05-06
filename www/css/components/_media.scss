@@ -1,0 +1,38 @@
+.media {
+    display: flex;
+    flex-wrap: row wrap;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 4px;
+    background: get-color('white');
+    box-shadow: 0px 2px 2px 0px get-color('black', 0.08), 0px 1px 5px 0px get-color('black', 0.04);
+    width: 100%;
+
+    // Media component followed by another media component
+    & + & {
+        margin-top: 16px;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    // Nested media components
+    &__content > & {
+        box-shadow: none;
+    }
+
+    // Image is after content
+    &__content + &__image {
+        margin-left: 16px;
+    }
+
+    &__image {
+        flex-shrink: 1;
+    }
+
+    // Image is before content
+    &__image + &__content {
+        margin-left: 16px;
+    }
+}

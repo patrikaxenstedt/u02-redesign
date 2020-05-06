@@ -1,0 +1,8 @@
+// If you truly must apply CSS to the page you're working on, do it in one of these files
+// Try using the grid system, utility layout classes and components before making one of these
+.example {
+    &__fake-parallax {
+        background: url('http://placekitten.com/1000'); 
+        background-attachment: fixed;        
+    }
+}

@@ -1,0 +1,95 @@
+// This file is not in SassDoc-style since it just generates a bunch of stuff
+
+// Alignment
+$align: (
+    'start': flex-start,
+    'center': center,
+    'end': flex-end,
+);
+
+$align-content: (
+    'start': flex-start,
+    'center': center,
+    'end': flex-end,
+    'around': space-around,
+    'between': space-between,
+);
+
+// Generate color modifiers
+@include generate-utility('text-', 'color', $theme-colors-all);
+@include generate-utility('bg-', 'background-color', $theme-colors-all);
+@include generate-utility('font-weight', 'font-weight', ('bold': 700, 'medium': 500, 'normal': 400, 'light': 300));
+
+@each $threshold, $width in $grid-breakpoints {
+    @include create-breakpoint-up($threshold) {
+        $breakpoint: if($width == 0, '', '-#{$threshold}');
+
+        // Alignment
+        @include generate-utility('justify-content', 'justify-content', $align-content, $breakpoint);
+        @include generate-utility('justify-items', 'justify-self', $align, $breakpoint);
+        @include generate-utility('justify-self', 'justify-items', $align, $breakpoint);
+
+        @include generate-utility('align-content', 'align-content', $align-content, $breakpoint);
+        @include generate-utility('align-items', 'align-items', $align, $breakpoint);
+        @include generate-utility('align-self', 'align-self', $align, $breakpoint);
+
+        @include generate-utility('text', 'text-align', (right: right), $breakpoint);
+        @include generate-utility('text', 'text-align', (center: center), $breakpoint);
+        @include generate-utility('text', 'text-align', (left: left), $breakpoint);
+
+        // Display breakpoints
+        @include generate-utility('d', 'display', ('none': none), $breakpoint);
+        @include generate-utility('d', 'display', ('inline': inline), $breakpoint);
+        @include generate-utility('d', 'display', ('inline-block': inline-block), $breakpoint);
+        @include generate-utility('d', 'display', ('block': block), $breakpoint);
+        @include generate-utility('d', 'display', ('flex': flex), $breakpoint);
+        @include generate-utility('d', 'display', ('inline-flex': inline-flex), $breakpoint);
+
+        // Margin auto
+        @include generate-utility('m', 'margin', ('auto': auto), $breakpoint);
+        @include generate-utility('my', ('margin-top', 'margin-bottom'), ('auto': auto), $breakpoint);
+        @include generate-utility('mx', ('margin-right', 'margin-left'), ('auto': auto), $breakpoint);
+        @include generate-utility('mt', 'margin-top', ('auto': auto), $breakpoint);
+        @include generate-utility('mr', 'margin-right', ('auto': auto), $breakpoint);
+        @include generate-utility('mb', 'margin-bottom', ('auto': auto), $breakpoint);
+        @include generate-utility('ml', 'margin-left', ('auto': auto), $breakpoint);
+
+        @for $iteration from 0 through 5 {
+            $spacing-value: ($iteration: 12px * $iteration);
+
+            // Margin
+            @include generate-utility('m', 'margin', $spacing-value, $breakpoint);
+            @include generate-utility('my', ('margin-top', 'margin-bottom'), $spacing-value, $breakpoint);
+            @include generate-utility('mx', ('margin-right', 'margin-left'), $spacing-value, $breakpoint);
+            @include generate-utility('mt', 'margin-top', $spacing-value, $breakpoint);
+            @include generate-utility('mr', 'margin-right', $spacing-value, $breakpoint);
+            @include generate-utility('mb', 'margin-bottom', $spacing-value, $breakpoint);
+            @include generate-utility('ml', 'margin-left', $spacing-value, $breakpoint);
+
+            // Padding
+            @include generate-utility('p', 'padding', $spacing-value, $breakpoint);
+            @include generate-utility('py', ('padding-top', 'padding-bottom'), $spacing-value, $breakpoint);
+            @include generate-utility('px', ('padding-right', 'padding-left'), $spacing-value, $breakpoint);
+            @include generate-utility('pt', 'padding-top', $spacing-value, $breakpoint);
+            @include generate-utility('pr', 'padding-right', $spacing-value, $breakpoint);
+            @include generate-utility('pb', 'padding-bottom', $spacing-value, $breakpoint);
+            @include generate-utility('pl', 'padding-left', $spacing-value, $breakpoint);
+        }
+
+        // Flexbox order
+        @include generate-utility('order', 'order', ('first': -1), $breakpoint);
+        @include generate-utility('order', 'order', ('last': 13), $breakpoint);
+
+        @for $iteration from 0 through $grid-columns {
+            // Generate order classes from .order-0 to .order-12
+            @include generate-utility('order', 'order', ($iteration: $iteration), $breakpoint);
+
+            // Check if iteration is less than grid column amount to prevent .offset-12
+            // Also check if infix is not empty and iteration is not 0 to prevent .offset-0
+            @if ($iteration < $grid-columns) and not ($breakpoint == '' and $iteration == 0) {
+                // Generate offset classes without !important
+                @include generate-utility('offset', 'margin-left', ($iteration: (100% / $grid-columns) * $iteration), $breakpoint, false);
+            }
+        }
+    }
+}

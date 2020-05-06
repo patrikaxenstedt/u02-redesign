@@ -1,0 +1,51 @@
+// This was the absolute worst
+// not only because of the pain of trying so many different methods - but also the result
+// If I don't get to do some javascript soon I'll be calling my lawyer!
+
+.parallax {
+    @include create-breakpoint('sm') {
+        overflow: hidden;
+    }
+
+    body {
+        @include create-breakpoint('sm') {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: $parallax-perspective;
+            transform-style: preserve-3d;
+            scroll-behavior: smooth;
+        }
+    }
+
+    &__static {
+        @include create-breakpoint('sm') {
+            position: relative;
+        }
+    }
+
+    &__item {
+        height: auto;
+
+        @include create-breakpoint('md') {
+            height: 100vh;
+        }
+
+        &::before {
+            @include create-breakpoint('sm') {
+                content: '';
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                left: 0;
+
+                transform: translateZ($parallax-translate-z - 1) scale(parallax-scale-factor($parallax-translate-z - 1));
+
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}

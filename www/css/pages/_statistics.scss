@@ -1,0 +1,9 @@
+.statistics {
+    @extend .about-us;
+
+    //placeholder icons
+    .pdf--icon li {
+        list-style-image: url('../media/pdf-icon.png');
+        margin-left: 30px;
+    }
+}

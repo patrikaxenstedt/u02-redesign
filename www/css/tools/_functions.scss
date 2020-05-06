@@ -1,0 +1,37 @@
+/// Gets a color from our predefined theme
+/// @require {$theme-colors-all}
+/// @param {Color} $color - Color name
+/// @param {Number} $alpha - Alpha value
+/// @return {Color} - Color value
+@function get-color($color, $alpha: null) {
+    // Throw error if color does not exist in theme
+    @if not map-has-key($theme-colors-all, $color) {
+        @error '$color: #{$color} does not exist in theme';
+    }
+
+    // Get color value from theme
+    $result: map-get($theme-colors-all, $color);
+
+    // Check if $alpha is set
+    @if $alpha {
+        // Throw error if alpha is not a number
+        @if (type-of($alpha) != 'number') {
+            @error '$alpha: #{$alpha} is not a number';
+        }
+
+        // Get RGBA value if $alpha is set
+        $result: change-color($result, $alpha: $alpha);
+    }
+
+    // Return color value
+    @return $result;
+}
+
+/// Calculate scale for parallax component
+/// https://developers.google.com/web/updates/2016/12/performant-parallaxing#adjusting_scale_for_perspective
+/// @param {Number} $z-distance - Distance
+/// @param {Number} $perspective - Perspective
+/// @return {Number} - Scale
+@function parallax-scale-factor($z-distance, $perspective: $parallax-perspective) {
+  @return ($perspective - $z-distance) / $perspective;
+}

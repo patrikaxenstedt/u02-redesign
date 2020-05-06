@@ -1,0 +1,77 @@
+/// Reusable media query using predefined breakpoint sizes
+/// @requires {variable} grid-breakpoints
+/// @param {String} $min - min-width
+/// @param {String} $max - max-width
+// Read about the @content directive: https://thoughtbot.com/blog/sasss-content-directive
+@mixin create-breakpoint($min: null, $max: null) {
+    @if $min == null and $max == null {
+        // Throw error if none of the arguments are set
+        @error "No value given for one or more required parameters";
+    } @else if $min == $max {
+        // Throw error if arguments are identical (equal values would make no sense here)
+        @error 'Values min and max cannot be identical';
+    } @else if ($min and not map-has-key($grid-breakpoints, $min)) or ($max and not map-has-key($grid-breakpoints, $max)) {
+        // Throw error if argument(s) are set, yet do not exist in the breakpoints map
+        @error 'Invalid breakpoint size(s) given';
+    }
+
+    // Get pixel value(s) from breakpoint map
+    $min: map-get($grid-breakpoints, $min);
+    $max: map-get($grid-breakpoints, $max);
+
+    @if $min and $max {
+        // If both min and max are set
+        @if $min > $max {
+            // Throw error if min is larger than max (that would make no sense)
+            @error 'min cannot be larger than max';
+        }
+
+        @media only screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $min {
+        // If only min is set
+        @media only screen and (min-width: $min) {
+            @content;
+        }
+    } @else if $max {
+        // If only max is set
+        @media only screen and (max-width: $max - 1) {
+            @content;
+        }
+    }
+}
+
+/// Reusable media query for min-width, no media query is inserted for the 'xs ' breakpoint
+/// @requires {variable} grid-breakpoints
+/// @param {String} $breakpoint - Breakpoint
+@mixin create-breakpoint-up($breakpoint) {
+    $min: map-get($grid-breakpoints, $breakpoint);
+
+    @if $min != 0 {
+        @include create-breakpoint($breakpoint) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+/// Generates utility classes
+/// @param {String} $property-class - Class name
+/// @param {String | List} $properties - Properties that will be set
+/// @param {Map} $values - Values that will be set
+/// @param {String} $infix - Infix, classname-sm, classname-md ... classname-1, classname-2 ...
+@mixin generate-utility($property-class, $properties, $values, $infix: null, $important: true) {
+    // Loop through values
+    @each $modifier, $value in $values {
+        // Create class - .classname-modifier or .classname-infix-modifier
+        .#{$property-class}#{$infix}-#{$modifier} {
+            // Loop through properties
+            @each $property in $properties {
+                // Set property and assign value, uses !important to override other values
+                #{$property}: #{$value} if($important, !important, null);
+            }
+        }
+    }
+}
