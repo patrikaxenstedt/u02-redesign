@@ -1,7 +1,7 @@
 # Project delta
 
 In this project, we have redesigned the website www.myh.se and used https://minasidor.myh.se/ as inspiration for the color scheme.
-You can access the finished project here: http://patrik.axenstedt.chas.academy/redesign/
+You can access the finished project here: https://axenstedt.com/redesign/
 
 * We used Sass to create:
     * a 12-column grid system
