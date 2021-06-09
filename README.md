@@ -14,7 +14,6 @@ In this project, we have redesigned the website www.myh.se and used https://mina
 
 ## Deploying
 1. Compile the Sass code with your compiler of choice
-2. 🎉
 
 ## Creators
 * Zahra Kirschblüte
