@@ -15,7 +15,7 @@ In this project, we have redesigned the website www.myh.se and used https://mina
 ## Deploying
 1. Compile the Sass code with your compiler of choice
 
-## Creators
+## Creators in this project
 * Zahra Kirschblüte
 * Lacki Kritsimas
 * Erik Axelsson
