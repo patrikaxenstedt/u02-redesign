@@ -1,4 +1,4 @@
-# Project delta
+# Redesign
 
 In this project, we have redesigned the website www.myh.se and used https://minasidor.myh.se/ as inspiration for the color scheme.
 
